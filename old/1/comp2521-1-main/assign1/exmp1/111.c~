@@ -1,0 +1,58 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct FileListNode {
+	char *filename;
+	double tf; // relative tf
+	struct FileListNode *next;
+};
+
+typedef struct FileListNode *FileList;
+char *my_strdup(const char *s);
+FileList newFileList(char *filename);
+
+
+int main(void){
+    char *x = "collection.txt";
+    FileList *n = newFileList(x);
+    FileList *new = n;
+    char a[100];
+    FILE *fp = fopen(x, "r");
+    while (fscanf(fp, "%s", new->filename) != EOF){
+        n->next = newFileList(a);
+        n = n->next;
+        memset(a, 0, sizeof(a));
+        
+    while (new != NULL){
+        printf("%s", new->filename);
+    }
+/*        FILE *fpr = fopen(a, "r");
+        while (fscanf(fpr, "%s", b) != EOF){
+            printf("%s\n",b);
+        }
+    }
+ */   
+    
+    
+}
+FileList newFileList(char *filename){
+    FileList *new = malloc(sizeof(*new));
+    if (new == NULL) {
+        fprintf(stderr, "Insufficient memory!\n");
+        exit(EXIT_FAILURE);
+    }
+    new->filename = my_strdup(filename);
+    new->tf = 0;
+    new->next = NULL;
+}
+
+char *my_strdup(char *s){
+    char *n = malloc(strlen(s) + 1);  
+    if (n == NULL) {
+        fprintf(stderr, "Insufficient memory!\n");
+        exit(EXIT_FAILURE);
+    }
+    strcpy(n, s);                      
+    return n;       
+}

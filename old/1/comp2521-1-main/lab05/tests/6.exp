@@ -1,0 +1,44 @@
+Runway Landing Scheduler v1.0
+Enter ? to see the list of commands.
+> + 3 18 1200
+Successfully added Mar 18 12:00 to the schedule!
+> + 3 18 1200
+Couldn't add Mar 18 12:00 to the schedule!
+> s 2
+Mar 18 12:00 (height: 0)
+> + 3 18 1150 
+Usage: + <month> <day> <hhmm>
+> s 2
+Mar 18 12:00 (height: 0)
+> + 3 18 1210
+Couldn't add Mar 18 12:10 to the schedule!
+> s 2
+Mar 18 12:00 (height: 0)
+> + 3 18 1201
+Couldn't add Mar 18 12:01 to the schedule!
+> s 2
+Mar 18 12:00 (height: 0)
+> + 3 18 2000
+Successfully added Mar 18 20:00 to the schedule!
+> s 2
+Mar 18 12:00 (height: 1)
+┕━╸R: Mar 18 20:00 (height: 0)
+> + 10 18 1150
+Successfully added Oct 18 11:50 to the schedule!
+> s 2
+Mar 18 20:00 (height: 1)
+┝━╸L: Mar 18 12:00 (height: 0)
+┕━╸R: Oct 18 11:50 (height: 0)
+> + 3 11 2000
+Successfully added Mar 11 20:00 to the schedule!
+> s 2
+Mar 18 20:00 (height: 2)
+┝━╸L: Mar 18 12:00 (height: 1)
+│     ┕━╸L: Mar 11 20:00 (height: 0)
+┕━╸R: Oct 18 11:50 (height: 0)
+> n
+4 landing times have been added to the schedule.
+> 
+Unknown command '
+'
+> 
