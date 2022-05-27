@@ -5,34 +5,35 @@
 * Find old course content 
   
 ## Assessment
-| TASK          | DUE | WEIGHT | RECIEVED |
-| ------------- | --- | ------ | -------- |
-| Asignment 1   | NA  | 15%    | NA       |
-| Project 1 + 2 | NA  | 17.5%  | NA       |
-| Project 3     | NA  | 17.5%  | NA       |
-| Class Mark    | ATT | 10%    | NA       |
-| Final         | NA  | 40%    | NA       |
-| TOTAL         |     |        | NA       |
+| TASK          | DUE                | WEIGHT | RECIEVED |
+| ------------- | ------------------ | ------ | -------- |
+| Asignment 1   | Week 4 Fiday 5PM   | 15%    | NA       |
+| Project 1 + 2 | Week 7 Sunday 5 PM | 17.5%  | NA       |
+| Project 3     | Week 9 Sunday 5 PM | 17.5%  | NA       |
+| Class Mark    | Weekly             | 15%    | NA       |
+| Final         | NA                 | 35%    | NA       |
+| TOTAL         |                    |        | NA       |
 ## Course Schedule
 ### Week 1
-* Course Intro
-*  Introduction to Object-Oriented Programming
-*  Introduction to Java
-*  Classes & Objects 
+* ADMIN:    Course Intro
+* OO:       Introduction to Java
+* OO:       Introduction to Object-Oriented Programming 
   
 ### Week 2
-* Inheritance & Polymorphism
-* Encapsulation
-* Domain Modelling
-* Exceptions in Java
+* ADMIN:    Assignment 1 
+* OO:       Inheritance
+* OO:       Interfaces
+* OO:       Polymorphism and more OO
+* DESIGN:   Domain Modelling
 
 ### Week 3
-*  Testing in Java
-*  Java Generics & Collections
-*  Anonymous Classes & Functions
-*  Design Principles
+*  DESIGN:  Design By Contract
+*  ProgPat: Exceptions
+*  TestPat: JUnit Testing 
+*  ProgPat: Generic & Collections
+*  DESIGN:  Design Principles
 
-### Week 4
+### Week 4 - TBA
 #### Assignment Due - Friday 5PM
 *  Introduction to Design Patterns
 *  Strategy Pattern
