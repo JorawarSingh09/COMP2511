@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- TODO = modify and expand the GUI? -->
+<!-- anchorPaneRoot is the background of the main game -->
+
+<AnchorPane fx:id="anchorPaneRoot" onKeyPressed="#handleKeyPress" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <!-- HBox is used to stack items horizontally left to right -->
+   <HBox>
+      <!-- VBox is used to stack items vertically top to bottom -->
+      <ScrollPane fx:id="heroCastle">
+         <VBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tip: Click on an item in your Inventory to sell it">
+               <font>
+                  <Font name="Avenir Book" size="14.0" />
+               </font>
+            </Text>
+            <GridPane fx:id="shopItems" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+                  <columnConstraints>
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     
+                  </children>
+               </GridPane>
+         </VBox>
+      </ScrollPane>
+      <VBox fx:id="gameMap">
+         <children>
+             <!-- squares contains the path, buildings, character, and enemies -->
+            <GridPane fx:id="squares" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+
+               </children>
+            </GridPane>
+
+            <!-- this BorderPane contains the ground under the cards and the cards -->
+            <BorderPane>
+               <bottom>
+                     <!-- cards GridPane holds the cards which can be used on the map -->
+                     <GridPane fx:id="cards" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+                        <columnConstraints>
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                        </rowConstraints>
+                        <children>
+
+                        </children>
+                     </GridPane>
+               </bottom>
+            </BorderPane>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <VBox>
+               <children>
+                  <Text fx:id="gameModeDisplay" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Avenir Book" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+               <children>
+                  <HBox>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cycle: ">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="cycleDisplay" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Text fill="#df1515" strokeType="OUTSIDE" strokeWidth="0.0" text="Health: ">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="healthDisplay" fill="#df1515" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#df1515" strokeType="OUTSIDE" strokeWidth="0.0" text=" / ">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="baseHealthDisplay" fill="#df1515" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Text fill="#d6c227" strokeType="OUTSIDE" strokeWidth="0.0" text="Gold: ">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="goldDisplay" fill="#d6c227" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Text fill="#d632d8" strokeType="OUTSIDE" strokeWidth="0.0" text="XP: ">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#d632d8" strokeType="OUTSIDE" strokeWidth="0.0" text="0" fx:id="xpDisplay">
+                           <font>
+                              <Font name="Avenir Book" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Equipped Items">
+               <font>
+                  <Font name="Avenir Next Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#4d4d4d" strokeType="OUTSIDE" strokeWidth="0.0" text="Armour">
+               <font>
+                  <Font name="Avenir Book" size="13.0" />
+               </font>
+            </Text>
+            <HBox>
+               <children>
+                  <GridPane fx:id="equippedHelmet" hgap="5.0" vgap="5.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <ImageView id="blankCell" GridPane.rowIndex="0">
+                           <image>
+                              <Image url="@../../images/helmet_slot.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </GridPane>
+                  <GridPane fx:id="equippedArmour" hgap="5.0" vgap="5.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <ImageView id="blankCell" GridPane.rowIndex="0">
+                           <image>
+                              <Image url="@../../images/image_just_black_tiny.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </GridPane>
+               </children>
+            </HBox>
+            <Text fill="#4d4d4d" strokeType="OUTSIDE" strokeWidth="0.0" text="Shield">
+               <font>
+                  <Font name="Avenir Book" size="13.0" />
+               </font>
+            </Text>
+            <GridPane fx:id="equippedShield" hgap="5.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  <ImageView id="blankCell" GridPane.rowIndex="0">
+                     <image>
+                        <Image url="@../../images/shield_unequipped.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <Text fill="#4d4d4d" strokeType="OUTSIDE" strokeWidth="0.0" text="Accessory">
+               <font>
+                  <Font name="Avenir Book" size="13.0" />
+               </font>
+            </Text>
+            <GridPane fx:id="equippedAccessory" hgap="5.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  <ImageView id="blankCell" GridPane.rowIndex="0">
+                     <image>
+                        <Image url="@../../images/image_just_black_tiny.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <Text fill="#4d4d4d" strokeType="OUTSIDE" strokeWidth="0.0" text="Weapon">
+               <font>
+                  <Font name="Avenir Book" size="13.0" />
+               </font>
+            </Text>
+            <GridPane fx:id="equippedWeapon" hgap="5.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  <ImageView id="blankCell" GridPane.rowIndex="0">
+                     <image>
+                        <Image url="@../../images/sword_unequipped.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory">
+               <font>
+                  <Font name="Avenir Next Bold" size="14.0" />
+               </font>
+            </Text>
+
+            <!-- unequippedInventory is for unequipped items, which can be dragged into the equipped inventory -->
+            <GridPane fx:id="unequippedInventory" hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  
+               </children>
+            </GridPane>
+
+            <!-- clicking this button returns the human player to the main menu -->
+            <Button onAction="#switchToMainMenu" text="Exit to Main Menu" />
+            <HBox>
+               <Button fx:id="pauseButton" onAction="#pauseGame" text="Pause" />
+               <Button fx:id="muteButton" onAction="#muteGame" text="Mute" />
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </HBox>
+   <HBox fx:id="gameOver" alignment="CENTER" prefHeight="550.0" prefWidth="470.0" style="-fx-background-color: white;">
+      <children>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Text fx:id="GameOverText" fill="#ff0e0e" strokeType="OUTSIDE" strokeWidth="0.0" text="GAMEOVER!!!" />
+               <Button onAction="#switchToMainMenu" text="Exit to Main Menu" />
+            </children>
+         </VBox>
+      </children>
+   </HBox>
+   <VBox fx:id="battle" prefHeight="549.0" prefWidth="469.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <children>
+               <Text layoutX="38.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BATTLE">
+                  <font>
+                     <Font name="Avenir Next Bold" size="30.0" />
+                  </font>
+               </Text>
+               <Text fx:id="enemiesLeft" layoutX="38.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.7476549324324" />
+               <Text fx:id="alliedSoldiersCount" layoutX="289.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have 3 allied soldiers!">
+                  <font>
+                     <Font name="Avenir Book" size="13.0" />
+                  </font></Text>
+            </children>
+         </Pane>
+         <HBox alignment="CENTER" prefHeight="554.0" prefWidth="470.0" styleClass="battle" stylesheets="@styles.css">
+            <children>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <ImageView fx:id="heroBattle" fitHeight="44.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                        <viewport>
+                           <Rectangle2D />
+                        </viewport>
+                        <image>
+                           <Image url="@../../images/human_new.png" />
+                        </image>
+                        <VBox.margin>
+                           <Insets bottom="20.0" />
+                        </VBox.margin>
+                     </ImageView>
+                     <ProgressBar fx:id="characterHealth" prefHeight="16.0" prefWidth="80.0" progress="1.0" style="-fx-accent: red;" />
+                  </children>
+               </VBox>
+               <Button fx:id="finishBattleButton" mnemonicParsing="false" onAction="#onFinishBattleButton" text="Continue" />
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <ProgressBar fx:id="enemyHealth" prefHeight="16.0" prefWidth="80.0" progress="1.0" style="-fx-accent: red;" />
+                     <ImageView fx:id="enemyBattle" fitHeight="44.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                        <VBox.margin>
+                           <Insets top="20.0" />
+                        </VBox.margin>
+                     </ImageView>
+                     <ProgressBar fx:id="bossHealth" prefHeight="16.0" prefWidth="80.0" progress="1.0" style="-fx-accent: red;" />
+                     <ImageView fx:id="bossBattle" fitHeight="44.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+</AnchorPane>

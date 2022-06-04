@@ -1,0 +1,4 @@
+- The precondition (balance must be >= 0) is explicitly checked in the methods
+- The postconditions are in the implementation (e.g. returning a boolean and modifying the balance)
+- balance >= 0 is a class invariant because it should always be true before and after every method
+- The class definitions are consistent with the Liskov Substitution Principle because LoggedBankAccount behaves in exactly the same way as BankAccount only it has an additional private field that records all transactions

@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestProduct",
+            "request": "launch",
+            "mainClass": "part3Q3.TestProduct"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestBag",
+            "request": "launch",
+            "mainClass": "part3Q2.TestBag"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GameOfLifeApplication",
+            "request": "launch",
+            "mainClass": "unsw.automata.GameOfLifeApplication"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DungeonApplication<project>",
+            "request": "launch",
+            "mainClass": "unsw.dungeon.DungeonApplication",
+            "projectName": "project"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EnrolmentTest",
+            "request": "launch",
+            "mainClass": "unsw.enrolment.test.EnrolmentTest"
+        }
+    ]
+}

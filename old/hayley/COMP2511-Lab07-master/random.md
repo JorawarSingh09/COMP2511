@@ -1,0 +1,1 @@
+- Since there is a 50/50 chance that the hero will win or lose, I would run the battle many times to get a large enough amount of data. Then test whether the wins and loses are split approximately 50/50 or if there is a bias towards one side.
