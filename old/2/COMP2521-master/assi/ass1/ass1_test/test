@@ -1,2 +1,0 @@
-gcc -o check invertedIndex.c myBST.c -lm
-./check
